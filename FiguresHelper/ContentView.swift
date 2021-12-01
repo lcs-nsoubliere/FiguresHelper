@@ -1,21 +1,22 @@
+////
+////  ContentView.swift
+////  FiguresHelper
+////
+////  Created by Noah Alexandre Soubliere on 2021-12-01.
+////
 //
-//  ContentView.swift
-//  FiguresHelper
+//import SwiftUI
 //
-//  Created by Noah Alexandre Soubliere on 2021-12-01.
+//struct ContentView: View {
+//    var body: some View {
+//        List {
+//            NavigationLink(destination: 2D)
+//            .padding()
+//    }
+//}
 //
-
-import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

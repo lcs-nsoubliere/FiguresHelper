@@ -13,11 +13,20 @@ struct CircleView: View {
     //radius is the name
     //Double is the Datat type
     //By adding = 15.00 - we are just adding a default value
-    var radius: Double = 15.00
+    //Input - we need this from the user
+    //We want this to update based on what the user selects
+    //to do this we use a speecial peice of syntax called "property wrapper"
+    //
+    //@state
+    //
+    
+    //this makrs the property as one swiftUI should watch for changes
+    
+    @State var radius: Double = 15.00
     
     //MARK: Computed Properties
     var area: Double {
-    return Double.pi * radius * radius
+        return Double.pi * radius * radius
     }
     
     // User interface
@@ -39,7 +48,9 @@ struct CircleView: View {
                     Spacer()
                 }
                 
-                Slider(value: .constant(15.0),
+                //This syntax of $ says to use this property (radius) and BIND IT to this control
+                //to "Bind" means when the control changes, the propertys value changes
+                Slider(value: $radius,
                        in: 0.0...100.0,
                        label: {
                     Text("Radius")
@@ -50,10 +61,10 @@ struct CircleView: View {
                        maximumValueLabel: {
                     Text("100.0")
                 })
-
+                
             }
             
-                        
+            
             // Output
             Text("Area:")
                 .bold()

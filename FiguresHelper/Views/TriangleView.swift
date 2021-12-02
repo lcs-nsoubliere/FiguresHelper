@@ -12,9 +12,10 @@ struct TriangleView: View {
     //MARK: stored properties
     @State var height: Double = 3
     @State var sideA: Double = 7
+    @State var sideC: Double = 4
+   
     //sideB is also Base
     @State var sideB: Double = 9
-    @State var sideC: Double = 4
     
     //MARK: computed properties
     var perimeter: Double {
@@ -29,14 +30,14 @@ struct TriangleView: View {
     
     // User interface
     var body: some View {
-       
+        
         VStack(alignment: .leading, spacing: 20) {
             
             // Input
             Text("Base:")
                 .bold()
             
-            //MARK: Base Value
+            //MARK: Base Value    Side B Value
             Group {
                 
                 // Show the selected Base value
@@ -64,8 +65,8 @@ struct TriangleView: View {
                 })
                 
             }
-        //MARK: Side A value
-          
+            //MARK: Side A value
+            
             Group {
                 
                 // Show the selected Base value
@@ -93,8 +94,37 @@ struct TriangleView: View {
                 })
                 
             }
+            //MARK: Side C value
+            
+            Group {
+                
+                // Show the selected Base value
+                HStack {
+                    Spacer()
+                    Text("\(sideC)")
+                        .font(.title2)
+                        .bold()
+                    Spacer()
+                }
+                
+                //This syntax of $ says to use this property (sideC) and BIND IT to this control
+                //to "Bind" means when the control changes, the propertys value changes
+                Slider(value: $sideC,
+                       in: 0.0...100.0,
+                       step: 1.0,
+                       label: {
+                    Text("sideC")
+                },
+                       minimumValueLabel: {
+                    Text("0.0")
+                },
+                       maximumValueLabel: {
+                    Text("100.0")
+                })
+                
+            }
+        }
     }
-}
 }
 struct TriangleView_Previews: PreviewProvider {
     static var previews: some View {

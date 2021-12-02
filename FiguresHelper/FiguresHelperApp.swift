@@ -11,7 +11,8 @@ import SwiftUI
 struct FiguresHelperApp: App {
     var body: some Scene {
         WindowGroup {
-            TriangleView()
+            CircleView()
+            // TriangleView()
         }
     }
 }
